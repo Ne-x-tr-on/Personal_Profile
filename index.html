@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Newton Manyeki Kamau | Portfolio</title>
+  <title>Nextron (Newton Manyeki Kamau) | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --primary: #2563eb;
@@ -17,13 +20,13 @@
       --text: #334155;
       --text-light: #64748b;
     }
-    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text);
@@ -31,14 +34,14 @@
       background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
       min-height: 100vh;
     }
-    
+
     .container {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
-    
+
     /* Header & Navigation */
     header {
       background: rgba(255, 255, 255, 0.95);
@@ -47,14 +50,14 @@
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-    
+
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 0;
     }
-    
+
     .logo {
       font-size: 24px;
       font-weight: 700;
@@ -63,32 +66,32 @@
       display: flex;
       align-items: center;
     }
-    
+
     .logo i {
       margin-right: 8px;
       color: var(--secondary);
     }
-    
+
     .nav-links {
       display: flex;
       list-style: none;
     }
-    
+
     .nav-links li {
       margin-left: 30px;
     }
-    
+
     .nav-links a {
       text-decoration: none;
       color: var(--text);
       font-weight: 500;
       transition: color 0.3s;
     }
-    
+
     .nav-links a:hover {
       color: var(--primary);
     }
-    
+
     /* Hero Section */
     .hero {
       background: linear-gradient(135deg, #2563eb 0%, #7e22ce 100%);
@@ -99,7 +102,7 @@
       overflow: hidden;
       clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     }
-    
+
     .hero::before {
       content: '';
       position: absolute;
@@ -111,14 +114,14 @@
       background-size: cover;
       background-position: center;
     }
-    
+
     .hero-content {
       max-width: 800px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
     }
-    
+
     .profile-image {
       width: 150px;
       height: 150px;
@@ -132,19 +135,29 @@
       font-size: 60px;
       border: 4px solid white;
     }
-    
+
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 10px;
       font-weight: 700;
     }
-    
+
+    .nextron-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
     .hero p {
       font-size: 1.25rem;
       margin-bottom: 30px;
       opacity: 0.9;
     }
-    
+
     .tagline {
       background: rgba(255, 255, 255, 0.2);
       display: inline-block;
@@ -153,7 +166,7 @@
       margin-bottom: 30px;
       font-weight: 500;
     }
-    
+
     .btn {
       display: inline-block;
       padding: 15px 30px;
@@ -166,34 +179,34 @@
       box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
       margin: 10px;
     }
-    
+
     .btn-outline {
       background: transparent;
       border: 2px solid white;
       box-shadow: none;
     }
-    
+
     .btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 20px rgba(249, 115, 22, 0.6);
     }
-    
+
     .btn-outline:hover {
       background: white;
       color: var(--primary);
       box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
     }
-    
+
     /* Section Common Styles */
     .section {
       padding: 100px 0;
     }
-    
+
     .section-title {
       text-align: center;
       margin-bottom: 60px;
     }
-    
+
     .section-title h2 {
       font-size: 2.5rem;
       color: var(--dark);
@@ -201,7 +214,7 @@
       position: relative;
       display: inline-block;
     }
-    
+
     .section-title h2::after {
       content: '';
       position: absolute;
@@ -213,42 +226,42 @@
       background: var(--primary);
       border-radius: 2px;
     }
-    
+
     /* About Section */
     .about {
       background: white;
     }
-    
+
     .about-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
       align-items: center;
     }
-    
+
     .about-text h3 {
       font-size: 1.8rem;
       margin-bottom: 20px;
       color: var(--dark);
     }
-    
+
     .about-details {
       margin-top: 30px;
     }
-    
+
     .detail-item {
       margin-bottom: 15px;
       display: flex;
       align-items: center;
     }
-    
+
     .detail-item i {
       color: var(--primary);
       margin-right: 15px;
       font-size: 1.2rem;
       width: 24px;
     }
-    
+
     .about-image {
       background: linear-gradient(45deg, #2563eb, #7e22ce);
       height: 400px;
@@ -259,26 +272,46 @@
       color: white;
       font-size: 1.5rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
     }
-    
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .about-image-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
     /* Skills Section */
     .skills {
       background: var(--light);
     }
-    
+
     .skills-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
-    
+
     .skill-category {
       background: white;
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
-    
+
     .skill-category h3 {
       font-size: 1.5rem;
       margin-bottom: 20px;
@@ -286,78 +319,79 @@
       display: flex;
       align-items: center;
     }
-    
+
     .skill-category h3 i {
       margin-right: 10px;
     }
-    
+
     .skill-list {
       list-style: none;
     }
-    
+
     .skill-list li {
       padding: 10px 0;
       border-bottom: 1px solid #e2e8f0;
       display: flex;
       align-items: center;
     }
-    
+
     .skill-list li:last-child {
       border-bottom: none;
     }
-    
+
     .skill-list li i {
       color: var(--accent);
       margin-right: 10px;
     }
-    
-    /* Projects Section */
-    .projects {
+
+    /* Companies Section */
+    .companies {
       background: white;
     }
-    
-    .project-cards {
+
+    .company-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
-    
-    .project-card {
+
+    .company-card {
       background: white;
       border-radius: 15px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       border: 1px solid #e2e8f0;
+      position: relative;
     }
-    
-    .project-card:hover {
+
+    .company-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
-    
-    .project-header {
+
+    .company-header {
       background: linear-gradient(45deg, var(--primary), var(--secondary));
       color: white;
       padding: 25px;
       text-align: center;
     }
-    
-    .project-body {
+
+    .company-body {
       padding: 25px;
     }
-    
-    .project-card h3 {
+
+    .company-card h3 {
       font-size: 1.5rem;
       margin-bottom: 15px;
     }
-    
-    .project-card p {
+
+    .company-card p {
       color: var(--text-light);
       margin-bottom: 20px;
     }
-    
-    .project-card .tag {
+
+    .company-card .tag {
       display: inline-block;
       background: var(--light);
       color: var(--primary);
@@ -367,28 +401,98 @@
       font-weight: 600;
       margin-right: 5px;
     }
-    
+
+    /* Products Section */
+    .products {
+      background: var(--light);
+    }
+
+    .product-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-header {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 25px;
+      text-align: center;
+      position: relative;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--accent);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .product-body {
+      padding: 25px;
+    }
+
+    .product-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .product-card p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .product-card .tag {
+      display: inline-block;
+      background: var(--light);
+      color: var(--primary);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 5px;
+    }
+
     /* Contact Section */
     .contact {
-      background: var(--light);
+      background: white;
       text-align: center;
       clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
       padding: 150px 0 100px;
     }
-    
+
     .contact p {
       max-width: 600px;
       margin: 0 auto 40px;
       font-size: 1.1rem;
     }
-    
+
     .social-links {
       display: flex;
       justify-content: center;
       margin-top: 30px;
       flex-wrap: wrap;
     }
-    
+
     .social-link {
       display: inline-flex;
       align-items: center;
@@ -403,12 +507,12 @@
       font-size: 1.2rem;
       transition: all 0.3s ease;
     }
-    
+
     .social-link:hover {
       transform: translateY(-5px);
       background: var(--secondary);
     }
-    
+
     /* Footer */
     footer {
       background: var(--dark);
@@ -416,52 +520,70 @@
       padding: 30px 0;
       text-align: center;
     }
-    
+
     /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    
+
     .fade-in {
       animation: fadeIn 1s ease forwards;
     }
-    
-    .delay-1 { animation-delay: 0.2s; }
-    .delay-2 { animation-delay: 0.4s; }
-    .delay-3 { animation-delay: 0.6s; }
-    
+
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .about-content {
         grid-template-columns: 1fr;
       }
-      
+
       .hero h1 {
         font-size: 2.5rem;
       }
-      
+
       .nav-links {
         display: none;
       }
-      
-      .project-cards,
+
+      .company-cards,
+      .product-cards,
       .skills-container {
         grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
+
 <body>
   <!-- Header & Navigation -->
   <header>
     <div class="container">
       <nav>
-        <a href="#" class="logo"><i class="fas fa-code"></i> Newton M. Kamau</a>
+        <a href="#" class="logo"><i class="fas fa-bolt"></i> Nextron</a>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#companies">Companies</a></li>
+          <li><a href="#products">Products</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -473,13 +595,14 @@
     <div class="container">
       <div class="hero-content">
         <div class="profile-image">
-          <i class="fas fa-user"></i>
+          <i class="fas fa-bolt"></i>
         </div>
-        <h1 class="fade-in">Newton Manyeki Kamau</h1>
+        <h1 class="fade-in">Newton Kamau<span class="nextron-tag">Nextron</span></h1>
         <p class="tagline fade-in delay-1">Industrial Mechatronics Engineer & Software Developer</p>
-        <p class="fade-in delay-2">Building innovative solutions that bridge hardware and software</p>
+        <p class="fade-in delay-2">I Bridge Intelligence into Software and Hardware</p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn fade-in delay-3">View My Work</a>
+          <a href="#companies" class="btn fade-in delay-3">My Companies</a>
+          <a href="#products" class="btn fade-in delay-3">My Products</a>
           <a href="#contact" class="btn btn-outline fade-in delay-3">Get In Touch</a>
         </div>
       </div>
@@ -495,8 +618,12 @@
       <div class="about-content">
         <div class="about-text">
           <h3>Industrial Mechatronics Student & Tech Innovator</h3>
-          <p>I'm a passionate developer and mechatronics engineer with a focus on creating innovative solutions that combine hardware and software. My work spans from AI-powered platforms to robotics and automation systems.</p>
-          
+          <p>
+            I’m Newton Manyeki Kamau, founder of Neza Company a tech innovation lab creating AI-powered software
+            solutions for Africa. From smart school management to e-commerce and AI vision systems, we build scalable,
+            locally-inspired products with global potential
+          </p>
+
           <div class="about-details">
             <div class="detail-item">
               <i class="fas fa-calendar-alt"></i>
@@ -510,10 +637,24 @@
               <i class="fas fa-map-marker-alt"></i>
               <span><strong>Focus:</strong> Software Development, AI, Robotics & Automation</span>
             </div>
+            <div class="detail-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span><strong>Location:</strong> Kenya</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-envelope"></i>
+              <span><strong>Email:</strong> 26nextron.dev@gmail.com</span>
+            </div>
+
+
+
           </div>
         </div>
         <div class="about-image">
-          <i class="fas fa-cogs"></i> Mechatronics & Software
+          <div class="about-image-content">
+            <i class="fas fa-cogs"></i>
+            <p>Mechatronics & Software</p>
+          </div>
         </div>
       </div>
     </div>
@@ -534,7 +675,7 @@
             <li><i class="fas fa-check"></i> C++</li>
           </ul>
         </div>
-        
+
         <div class="skill-category fade-in delay-1">
           <h3><i class="fas fa-globe"></i> Web Development</h3>
           <ul class="skill-list">
@@ -543,7 +684,7 @@
             <li><i class="fas fa-check"></i> Responsive Design</li>
           </ul>
         </div>
-        
+
         <div class="skill-category fade-in delay-2">
           <h3><i class="fas fa-chart-line"></i> Data Analytics</h3>
           <ul class="skill-list">
@@ -552,7 +693,7 @@
             <li><i class="fas fa-check"></i> Data Visualization</li>
           </ul>
         </div>
-        
+
         <div class="skill-category fade-in delay-3">
           <h3><i class="fas fa-robot"></i> Mechatronics</h3>
           <ul class="skill-list">
@@ -561,7 +702,7 @@
             <li><i class="fas fa-check"></i> Automation Systems</li>
           </ul>
         </div>
-        
+
         <div class="skill-category fade-in">
           <h3><i class="fas fa-brain"></i> AI & Software</h3>
           <ul class="skill-list">
@@ -570,12 +711,12 @@
             <li><i class="fas fa-check"></i> Business Automation</li>
           </ul>
         </div>
-        
+
         <div class="skill-category fade-in delay-1">
           <h3><i class="fas fa-lightbulb"></i> Other Interests</h3>
           <ul class="skill-list">
             <li><i class="fas fa-check"></i> Blockchain Technology</li>
-            <li><i class="fas fa-check"></i> Vending Machines</li>
+            <li><i class="fas fa-check"></i>Women</li>
             <li><i class="fas fa-check"></i> Software Platforms</li>
           </ul>
         </div>
@@ -583,82 +724,112 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section projects">
+  <!-- Companies Section -->
+  <section id="companies" class="section companies">
     <div class="container">
       <div class="section-title">
-        <h2>My Projects & Companies</h2>
+        <h2>My Companies</h2>
+        <p>Startups and ventures I've founded and currently operate</p>
       </div>
-      <div class="project-cards">
-        <div class="project-card fade-in">
-          <div class="project-header">
-            <h3>Neza Software Company</h3>
-          </div>
-          <div class="project-body">
-            <p>My tech startup focused on creating innovative software solutions for African markets.</p>
-            <span class="tag">Software</span>
-            <span class="tag">Startup</span>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in delay-1">
-          <div class="project-header">
-            <h3>Lydatron Company</h3>
-          </div>
-          <div class="project-body">
-            <p>A mechatronics company specializing in robotics and automation solutions.</p>
-            <span class="tag">Mechatronics</span>
-            <span class="tag">Robotics</span>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in delay-2">
-          <div class="project-header">
+      <div class="company-cards">
+
+        <!-- Cemall -->
+        <div class="product-card fade-in delay-5">
+          <div class="product-header">
             <h3>Cemall</h3>
+            <div class="product-badge">Neza Software</div>
           </div>
-          <div class="project-body">
-            <p>Community enterprise mall platform that allows physical shops to manage sales, staff, and branches online.</p>
+          <div class="product-body">
+            <p>A digital mall platform for African markets, allowing users to set up shops, manage customers, track
+              orders, and handle sales efficiently online.</p>
             <span class="tag">E-commerce</span>
-            <span class="tag">Platform</span>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in delay-3">
-          <div class="project-header">
-            <h3>Teffarm</h3>
-          </div>
-          <div class="project-body">
-            <p>Farm management software designed to optimize agricultural operations.</p>
-            <span class="tag">Agriculture</span>
-            <span class="tag">Software</span>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in">
-          <div class="project-header">
-            <h3>Ben (Bio Energy Navigator)</h3>
-          </div>
-          <div class="project-body">
-            <p>AI-powered vending machine platform for seamless business automation.</p>
-            <span class="tag">AI</span>
-            <span class="tag">Vending</span>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in delay-1">
-          <div class="project-header">
-            <h3>African Market Platforms</h3>
-          </div>
-          <div class="project-body">
-            <p>Web and AI-powered platforms specifically designed for African markets.</p>
-            <span class="tag">Web</span>
-            <span class="tag">AI</span>
+            <span class="tag">Marketplace</span>
             <span class="tag">Africa</span>
           </div>
         </div>
+
+        <!-- 8. VisionID -->
+        <div class="product-card fade-in delay-8">
+          <div class="product-header">
+            <h3>VisionID</h3>
+            <div class="product-badge">Neza Software</div>
+          </div>
+          <div class="product-body">
+            <p>An AI-driven system that identifies individuals using face recognition, behavior patterns, or document
+              scanning ideal for schools, offices, and events.</p>
+            <span class="tag">AI</span>
+            <span class="tag">Identification</span>
+            <span class="tag">Security</span>
+          </div>
+        </div>
+
+        <!-- 10. Tefflow -->
+        <div class="product-card fade-in delay-9">
+          <div class="product-header">
+            <h3>Tefflow</h3>
+            <div class="product-badge">Neza Software</div>
+          </div>
+          <div class="product-body">
+            <p>An agri-tech platform for managing farms, animal health, crop care, and logistics powered by VisionID for
+              precision farming.</p>
+            <span class="tag">Agriculture</span>
+            <span class="tag">AI</span>
+            <span class="tag">Management</span>
+          </div>
+        </div>
+
+
+                <!-- 6. Repp -->
+        <div class="product-card fade-in delay-6">
+          <div class="product-header">
+            <h3>Repp </h3>
+            <div class="product-badge">Neza Software</div>
+          </div>
+          <div class="product-body">
+            <p>A smart, AI-powered property management platform for landlords, agents, and real estate firms. Manage
+              tenants, rent, contracts, and reports all in one intelligent system.</p>
+            <span class="tag">Real Estate</span>
+            <span class="tag">Property Management</span>
+            <span class="tag">AI</span>
+          </div>
+        </div>
+
+        <!-- 12. Ben (BioEnergy Navigator) -->
+        <div class="product-card fade-in delay-10">
+          <div class="product-header">
+            <h3>Ben</h3>
+            <div class="product-badge">Neza Software</div>
+          </div>
+          <div class="product-body">
+            <p>A smart, eco-focused system helping farmers monitor, reduce, and profit from methane emissions and
+              sustainable energy practices. Powered by Tefflow + VisionID.</p>
+            <span class="tag">Energy</span>
+            <span class="tag">Sustainability</span>
+            <span class="tag">Agriculture</span>
+          </div>
+        </div>
+
+        <!-- 7. Piah -->
+        <div class="product-card fade-in delay-7">
+          <div class="product-header">
+            <h3>Piah</h3>
+            <div class="product-badge">Neza Software</div>
+          </div>
+          <div class="product-body">
+            <p>A smart digital assistant to help individuals, families, or small teams plan events birthdays, weddings,
+              meetings, dinners, or house parties directly from home.</p>
+            <span class="tag">Event Planning</span>
+            <span class="tag">Assistant</span>
+            <span class="tag">AI</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+
+
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
@@ -668,7 +839,7 @@
       </div>
       <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
       <a href="mailto:26nextron.dev@gmail.com" class="btn">Email Me</a>
-      
+
       <div class="social-links">
         <a href="https://wa.me/254783416390" class="social-link" target="_blank">
           <i class="fab fa-whatsapp"></i>
@@ -692,18 +863,18 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; <span id="year"></span> Newton Manyeki Kamau. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Newton "Nextron" Manyeki Kamau. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
-    
+
     // Simple fade-in animation for elements
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const fadeElements = document.querySelectorAll('.fade-in');
-      
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -711,7 +882,7 @@
           }
         });
       }, { threshold: 0.1 });
-      
+
       fadeElements.forEach(element => {
         element.style.opacity = 0;
         element.style.transition = 'opacity 0.5s ease-in-out';
@@ -720,4 +891,5 @@
     });
   </script>
 </body>
+
 </html>
