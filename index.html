@@ -19,19 +19,42 @@
       --dark: #1e293b;
       --text: #334155;
       --text-light: #64748b;
+      --bg-primary: #f8fafc;
+      --bg-secondary: #e2e8f0;
+      --card-bg: #ffffff;
+      --header-bg: rgba(255, 255, 255, 0.95);
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      --section-padding: 80px 0;
+    }
+
+    [data-theme="dark"] {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --secondary: #a855f7;
+      --accent: #f97316;
+      --light: #1e293b;
+      --dark: #f8fafc;
+      --text: #e2e8f0;
+      --text-light: #94a3b8;
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --card-bg: #1e293b;
+      --header-bg: rgba(15, 23, 42, 0.95);
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text);
       line-height: 1.6;
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      background: var(--bg-primary);
       min-height: 100vh;
     }
 
@@ -44,27 +67,29 @@
 
     /* Header & Navigation */
     header {
-      background: rgba(255, 255, 255, 0.95);
+      background: var(--header-bg);
       position: fixed;
       width: 100%;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+      padding: 15px 0;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
       color: var(--primary);
       text-decoration: none;
       display: flex;
       align-items: center;
+      font-family: 'Roboto Mono', monospace;
     }
 
     .logo i {
@@ -78,7 +103,7 @@
     }
 
     .nav-links li {
-      margin-left: 30px;
+      margin-left: 25px;
     }
 
     .nav-links a {
@@ -86,17 +111,39 @@
       color: var(--text);
       font-weight: 500;
       transition: color 0.3s;
+      font-size: 15px;
     }
 
     .nav-links a:hover {
       color: var(--primary);
     }
 
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
     /* Hero Section */
     .hero {
       background: linear-gradient(135deg, #2563eb 0%, #7e22ce 100%);
       color: white;
-      padding: 160px 0 100px;
+      padding: 140px 0 80px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -123,21 +170,22 @@
     }
 
     .profile-image {
-      width: 150px;
-      height: 150px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      margin: 0 auto 30px;
+      margin: 0 auto 25px;
       background: linear-gradient(45deg, var(--accent), var(--secondary));
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 60px;
+      font-size: 50px;
       border: 4px solid white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 10px;
       font-weight: 700;
     }
@@ -145,31 +193,33 @@
     .nextron-tag {
       display: inline-block;
       background: rgba(255, 255, 255, 0.2);
-      padding: 5px 15px;
+      padding: 4px 12px;
       border-radius: 20px;
-      font-size: 1.2rem;
-      margin-left: 10px;
+      font-size: 1rem;
+      margin-left: 8px;
       vertical-align: middle;
+      font-family: 'Roboto Mono', monospace;
     }
 
     .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 30px;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
       opacity: 0.9;
     }
 
     .tagline {
       background: rgba(255, 255, 255, 0.2);
       display: inline-block;
-      padding: 8px 20px;
+      padding: 6px 16px;
       border-radius: 50px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       font-weight: 500;
+      font-size: 0.95rem;
     }
 
     .btn {
       display: inline-block;
-      padding: 15px 30px;
+      padding: 12px 25px;
       background: var(--accent);
       color: white;
       text-decoration: none;
@@ -177,7 +227,8 @@
       font-weight: 600;
       transition: all 0.3s ease;
       box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
-      margin: 10px;
+      margin: 8px;
+      font-size: 0.9rem;
     }
 
     .btn-outline {
@@ -199,20 +250,21 @@
 
     /* Section Common Styles */
     .section {
-      padding: 100px 0;
+      padding: var(--section-padding);
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
 
     .section-title h2 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       color: var(--dark);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       position: relative;
       display: inline-block;
+      font-family: 'Roboto Mono', monospace;
     }
 
     .section-title h2::after {
@@ -221,57 +273,63 @@
       bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
+      width: 70px;
       height: 4px;
       background: var(--primary);
       border-radius: 2px;
     }
 
+    .section-title p {
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
     /* About Section */
     .about {
-      background: white;
+      background: var(--card-bg);
     }
 
     .about-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      gap: 40px;
       align-items: center;
     }
 
     .about-text h3 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
       color: var(--dark);
     }
 
     .about-details {
-      margin-top: 30px;
+      margin-top: 25px;
     }
 
     .detail-item {
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
     }
 
     .detail-item i {
       color: var(--primary);
-      margin-right: 15px;
-      font-size: 1.2rem;
-      width: 24px;
+      margin-right: 12px;
+      font-size: 1.1rem;
+      width: 20px;
     }
 
     .about-image {
       background: linear-gradient(45deg, #2563eb, #7e22ce);
-      height: 400px;
-      border-radius: 20px;
+      height: 350px;
+      border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 1.5rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      font-size: 1.3rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
     }
@@ -296,28 +354,34 @@
 
     /* Skills Section */
     .skills {
-      background: var(--light);
+      background: var(--bg-secondary);
     }
 
     .skills-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .skill-category {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-5px);
     }
 
     .skill-category h3 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
       color: var(--primary);
       display: flex;
       align-items: center;
+      font-family: 'Roboto Mono', monospace;
     }
 
     .skill-category h3 i {
@@ -329,8 +393,8 @@
     }
 
     .skill-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid #e2e8f0;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--bg-secondary);
       display: flex;
       align-items: center;
     }
@@ -341,155 +405,148 @@
 
     .skill-list li i {
       color: var(--accent);
-      margin-right: 10px;
+      margin-right: 8px;
+      font-size: 0.9rem;
     }
 
     /* Companies Section */
     .companies {
-      background: white;
+      background: var(--card-bg);
     }
 
     .company-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .company-card {
-      background: white;
-      border-radius: 15px;
+      background: var(--card-bg);
+      border-radius: 12px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      border: 1px solid #e2e8f0;
-      position: relative;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--bg-secondary);
     }
 
     .company-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
     }
 
     .company-header {
       background: linear-gradient(45deg, var(--primary), var(--secondary));
       color: white;
-      padding: 25px;
+      padding: 20px;
       text-align: center;
     }
 
     .company-body {
-      padding: 25px;
+      padding: 20px;
     }
 
     .company-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
     }
 
     .company-card p {
       color: var(--text-light);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
     }
 
-    .company-card .tag {
+    .tag {
       display: inline-block;
-      background: var(--light);
+      background: var(--bg-secondary);
       color: var(--primary);
-      padding: 5px 15px;
+      padding: 4px 12px;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
       margin-right: 5px;
+      margin-bottom: 5px;
+      font-family: 'Roboto Mono', monospace;
     }
 
     /* Products Section */
     .products {
-      background: var(--light);
+      background: var(--bg-secondary);
     }
 
     .product-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .product-card {
-      background: white;
-      border-radius: 15px;
+      background: var(--card-bg);
+      border-radius: 12px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--bg-secondary);
     }
 
     .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
     }
 
     .product-header {
       background: linear-gradient(45deg, var(--primary), var(--secondary));
       color: white;
-      padding: 25px;
+      padding: 20px;
       text-align: center;
       position: relative;
     }
 
     .product-badge {
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 12px;
+      right: 12px;
       background: var(--accent);
       color: white;
-      padding: 5px 10px;
+      padding: 4px 8px;
       border-radius: 20px;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 600;
     }
 
     .product-body {
-      padding: 25px;
+      padding: 20px;
     }
 
     .product-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
     }
 
     .product-card p {
       color: var(--text-light);
-      margin-bottom: 20px;
-    }
-
-    .product-card .tag {
-      display: inline-block;
-      background: var(--light);
-      color: var(--primary);
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-right: 5px;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
     }
 
     /* Contact Section */
     .contact {
-      background: white;
+      background: var(--card-bg);
       text-align: center;
-      clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
-      padding: 150px 0 100px;
+      clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+      padding: 120px 0 80px;
     }
 
     .contact p {
       max-width: 600px;
-      margin: 0 auto 40px;
-      font-size: 1.1rem;
+      margin: 0 auto 30px;
+      font-size: 1rem;
     }
 
     .social-links {
       display: flex;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 25px;
       flex-wrap: wrap;
     }
 
@@ -497,14 +554,14 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       background: var(--primary);
       color: white;
-      margin: 0 10px;
+      margin: 0 8px;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       transition: all 0.3s ease;
     }
 
@@ -517,8 +574,9 @@
     footer {
       background: var(--dark);
       color: white;
-      padding: 30px 0;
+      padding: 25px 0;
       text-align: center;
+      font-size: 0.9rem;
     }
 
     /* Animations */
@@ -551,23 +609,121 @@
     }
 
     /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero {
+        padding: 120px 0 70px;
+      }
+      
+      .section {
+        padding: 70px 0;
+      }
+      
+      .about-content {
+        gap: 30px;
+      }
+      
+      .about-image {
+        height: 300px;
+      }
+    }
+
     @media (max-width: 768px) {
+      .container {
+        padding: 0 15px;
+      }
+      
+      .hero {
+        padding: 100px 0 60px;
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .nextron-tag {
+        font-size: 0.9rem;
+      }
+      
+      .section {
+        padding: 60px 0;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
       .about-content {
         grid-template-columns: 1fr;
+        gap: 30px;
       }
-
-      .hero h1 {
-        font-size: 2.5rem;
+      
+      .about-image {
+        height: 250px;
+        order: -1;
       }
-
+      
       .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--header-bg);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: var(--shadow);
       }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .nav-links li {
+        margin: 10px 0;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .contact {
+        clip-path: polygon(0 2%, 100% 0, 100% 100%, 0 100%);
+        padding: 100px 0 60px;
+      }
+    }
 
-      .company-cards,
-      .product-cards,
-      .skills-container {
-        grid-template-columns: 1fr;
+    @media (max-width: 480px) {
+      .hero {
+        padding: 90px 0 50px;
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .profile-image {
+        width: 110px;
+        height: 110px;
+        font-size: 40px;
+      }
+      
+      .section {
+        padding: 50px 0;
+      }
+      
+      .btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        margin: 5px;
+      }
+      
+      .section-title h2 {
+        font-size: 1.6rem;
+      }
+      
+      .about-image {
+        height: 220px;
       }
     }
   </style>
@@ -578,7 +734,7 @@
   <header>
     <div class="container">
       <nav>
-        <a href="#" class="logo"><i class="fas fa-bolt"></i>Nextron_360</a>
+        <a href="#" class="logo"><i class="fas fa-microchip"></i>Nextron_360</a>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -586,6 +742,12 @@
           <li><a href="#products">Products</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -595,11 +757,11 @@
     <div class="container">
       <div class="hero-content">
         <div class="profile-image">
-          <i class="fas fa-bolt"></i>
+          <i class="fas fa-microchip"></i>
         </div>
         <h1 class="fade-in">Newton Kamau<span class="nextron-tag">Techie</span></h1>
         <p class="tagline fade-in delay-1">Mechatronics | Software | AI</p>
-        <p class="fade-in delay-2"> Bridging Intelligence into Software and Hardware</p>
+        <p class="fade-in delay-2">Bridging Intelligence into Software and Hardware</p>
         <div class="hero-buttons">
           <a href="#companies" class="btn fade-in delay-3">My Companies</a>
           <a href="#products" class="btn fade-in delay-3">My Products</a>
@@ -619,22 +781,20 @@
         <div class="about-text">
           <h3>Mechatronics Student & Tech Innovator</h3>
           <p>
-           Founder of Neza Company, a tech innovation lab creating AI-powered software solutions for Africa. We focus on building scalable products that range from smart school management systems to e-commerce platforms and AI vision tools. All designed with local inspiration and global potential.
+            Founder of Neza Company, a tech innovation lab creating AI-powered software solutions for Africa. We focus on building scalable products that range from smart school management systems to e-commerce platforms and AI vision tools. All designed with local inspiration and global potential.
           </p>
 
           <div class="about-details">
-            
             <div class="detail-item">
               <i class="fas fa-graduation-cap"></i>
               <span><strong>Education:</strong> Mechatronics Engineer</span>
             </div>
-              <div class="detail-item">
-                <i class="fas fa-user"></i>
-                <span><strong>About:</strong> Mechatronics Student & Tech Innovator</span>
-              </div>
-
             <div class="detail-item">
-                <i class="fas fa-bullseye"></i>
+              <i class="fas fa-user"></i>
+              <span><strong>About:</strong> Mechatronics Student & Tech Innovator</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-bullseye"></i>
               <span><strong>Focus:</strong> Software Dev, AI, Robotics & Automation</span>
             </div>
             <div class="detail-item">
@@ -645,7 +805,6 @@
               <i class="fas fa-map-marker-alt"></i>
               <span><strong>Location:</strong> Kiambu, Kenya</span>
             </div>
-
           </div>
         </div>
         <div class="about-image">
@@ -719,7 +878,7 @@
           <h3><i class="fas fa-lightbulb"></i> Other Interests</h3>
           <ul class="skill-list">
             <li><i class="fas fa-check"></i> Blockchain Technology</li>
-            <li><i class="fas fa-check"></i>Artificial Intelligence</li>
+            <li><i class="fas fa-check"></i> Artificial Intelligence</li>
             <li><i class="fas fa-check"></i> ArcGIS</li>
             <li><i class="fas fa-check"></i> Software Platforms</li>
           </ul>
@@ -728,43 +887,42 @@
     </div>
   </section>
 
-<!-- Companies Section -->
-<section id="companies" class="section companies">
-  <div class="container">
-    <div class="section-title">
-      <h2>My Companies</h2>
-      <p>Startups and ventures I've founded and currently operate</p>
-    </div>
-    <div class="company-cards">
-      <!-- Neza Software -->
-      <div class="company-card fade-in">
-        <div class="company-header">
-          <h3>Neza Software</h3>
+  <!-- Companies Section -->
+  <section id="companies" class="section companies">
+    <div class="container">
+      <div class="section-title">
+        <h2>My Companies</h2>
+        <p>Startups and ventures I've founded and currently operate</p>
+      </div>
+      <div class="company-cards">
+        <!-- Neza Software -->
+        <div class="company-card fade-in">
+          <div class="company-header">
+            <h3>Neza Software</h3>
+          </div>
+          <div class="company-body">
+            <p>A tech innovation lab creating AI-powered software solutions for Africa. From smart school management to e-commerce and AI vision systems, we build scalable, locally-inspired products with global potential.</p>
+            <span class="tag">Software</span>
+            <span class="tag">AI</span>
+            <span class="tag">Africa</span>
+          </div>
         </div>
-        <div class="company-body">
-          <p>A tech innovation lab creating AI-powered software solutions for Africa. From smart school management to e-commerce and AI vision systems, we build scalable, locally-inspired products with global potential.</p>
-          <span class="tag">Software</span>
-          <span class="tag">AI</span>
-          <span class="tag">Africa</span>
+
+        <!-- Lydatron -->
+        <div class="company-card fade-in">
+          <div class="company-header">
+            <h3>Lydatron</h3>
+          </div>
+          <div class="company-body">
+            <p>A hardware-focused company supporting mechatronics innovation. Lydatron designs and supplies high-quality mechanical and electronic components for robotics, automation, and smart devices.</p>
+            <span class="tag">Hardware</span>
+            <span class="tag">Mechatronics</span>
+            <span class="tag">Innovation</span>
+          </div>
         </div>
       </div>
-
-      <!-- Lydatron -->
-      <div class="company-card fade-in">
-        <div class="company-header">
-          <h3>Lydatron</h3>
-        </div>
-        <div class="company-body">
-          <p>A hardware-focused company supporting mechatronics innovation. Lydatron designs and supplies high-quality mechanical and electronic components for robotics, automation, and smart devices.</p>
-          <span class="tag">Hardware</span>
-          <span class="tag">Mechatronics</span>
-          <span class="tag">Innovation</span>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Products Section -->
   <section id="products" class="section products">
@@ -900,6 +1058,49 @@
   <script>
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Check for saved theme preference or respect OS preference
+    const savedTheme = localStorage.getItem('theme') || 
+                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    if (savedTheme === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      if (document.body.getAttribute('data-theme') === 'dark') {
+        document.body.removeAttribute('data-theme');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.body.setAttribute('data-theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileToggle.innerHTML = navLinks.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
 
     // Simple fade-in animation for elements
     document.addEventListener('DOMContentLoaded', function () {
